@@ -7,8 +7,8 @@ let currCategoryName ="";
 function getQuestions(categoryName){
 
     currCategoryName = categoryName;
-    // showchart();
-    // return;
+    currQuestion = 0;
+    score = 0;
     const randNum = Math.floor(Math.random() * fileCounts[categoryName]);
 
     const url = `./data/${categoryName}/${randNum}.json`;
@@ -166,7 +166,7 @@ function closeChart(){
 
 async function getchartData(){
 
-    const response = await fetch("/data/models.json");
+    const response = await fetch("./data/models.json");
     if (!response.ok) {
         throw new Error("error while fetching models.json");
     }
